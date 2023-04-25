@@ -179,14 +179,14 @@ def delete_book(id):
         # Ejecutar la consulta SQL para eliminar el libro con el ID especificado
         cursor.execute("DELETE FROM books_table WHERE id = %s", (id,))
 
-    # Confirmar la transacción
-    conn.commit()
+        # Confirmar la transacción
+        conn.commit()
 
-    # cerrar el cursor
-    cursor.close()
+        # cerrar el cursor
+        cursor.close()
 
-    # Retornar una respuesta JSON indicando que el libro ha sido eliminado
-    return jsonify({'El libro ha sido eliminado de la base de datos'})
+        # Retornar una respuesta JSON indicando que el libro ha sido eliminado
+        return jsonify({'El libro ha sido eliminado de la base de datos'})
 
 # 5.Ruta para modificar un libro
 @app.route('/resources/book/update', methods=['PUT'])
